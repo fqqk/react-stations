@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+}
+
+.dogView {
+    margin: 50px;
+}
+
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+header h2{
+    background-color:#B2BBC8;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    font-size: 2em;
+}
+
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+
+.item_des,.item_img {
+    position: relative;
+    width: 50%;
+    height: 500px;
+    text-align: center;
+}
+
+
+.item_des p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform-origin: center;
+    transform: translate(-50%,-50%);
+}
+
+img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: fill;
+    margin-bottom: 20px;
+}
+
+
+
+.btn {
+    position: absolute;
+    bottom: -100px;
+    right: 0;
+    display: block;
+    color: black;
+    border: black;
+    box-shadow: 4px 4px 5px black;
+    width: 100px;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    color: white;
+    background-color: #0C6FEE;
+}
+
+
+@media  screen and (max-width:700px) {
+    .flex {
+        flex-direction: column;
+    }
+
+    .dogView {
+        margin: 20px;
+    }
+
+    .item_des {
+        width: 100%;
+        height: 100px;
+    }
+
+    .item_img{
+        width: 100%;
+        height: 300px;
+    }
+
+
+    img {
+        object-fit: contain;
+    }
+
+}
