@@ -2,43 +2,27 @@
 
 import * as React from 'react'
 import './App.css'
+import { Header } from './Header'
+import { Description } from './Description'
+import { DogListContainer } from './DogListContainer'
 
-// /**
-//  * 
 //  * @type {React.FC}
 //  */
 export const App = () => {
-
-  const [dogUrl,setDogUrl] = React.useState("https://images.dog.ceo/breeds/akita/Akita_inu_blanc.jpg");
-
-
-  const updateImg = async function() {
-    const res = await fetch("https://dog.ceo/api/breeds/image/random");
-    const data = await res.json();
-      if(data.status === "success"){
-        // console.log(data.message);
-        setDogUrl(data.message);
-      }
-  }
-
-
   return (
-    <div className = "container">
-      <header>
-        <h2>Dog アプリ</h2>
-      </header>
+    <div className="container">
+      <Header name="Dog アプリ" />
       <main>
-        <section className = "dogView">
-        <div className = "flex">
-          <div className = "item_des"><p>犬の画像を表示するサイトです</p></div>
-          <div className = "item_img">
-            <img src = {dogUrl}></img>
-            <button onClick = {updateImg} className = "btn">更新</button>
-          </div>
-        </div>
+        <section className="dogView">
+          <Description
+            btn_text="更新"
+            des_text="犬の画像を表示するアプリです。"
+          />
+        </section>
+        <section className="dogList">
+          <DogListContainer />
         </section>
       </main>
-      
     </div>
   )
 }
